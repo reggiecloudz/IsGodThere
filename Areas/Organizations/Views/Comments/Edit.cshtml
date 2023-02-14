@@ -1,0 +1,60 @@
+@model IsGodThere.Domain.Comment
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 fs-3">Comment Edit</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 fs-3">
+            <a class="btn btn-primary" asp-action="Index">Back to List</a>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    Edit
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <div class="form-group">
+                            <label asp-for="Content" class="control-label"></label>
+                            <input asp-for="Content" class="form-control" />
+                            <span asp-validation-for="Content" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ArticleId" class="control-label"></label>
+                            <select asp-for="ArticleId" class="form-control" asp-items="ViewBag.ArticleId"></select>
+                            <span asp-validation-for="ArticleId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ParentId" class="control-label"></label>
+                            <select asp-for="ParentId" class="form-control" asp-items="ViewBag.ParentId"></select>
+                            <span asp-validation-for="ParentId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="UserId" class="control-label"></label>
+                            <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+                            <span asp-validation-for="UserId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

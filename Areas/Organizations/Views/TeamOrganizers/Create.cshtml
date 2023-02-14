@@ -1,0 +1,52 @@
+@model IsGodThere.Domain.TeamOrganizer
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 fs-3">Create</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 fs-3">
+            <a class="btn btn-primary" asp-action="Index">Back to List</a>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    Create
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="IsLead" /> @Html.DisplayNameFor(model => model.IsLead)
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="OrganizerId" class="control-label"></label>
+                            <select asp-for="OrganizerId" class ="form-control" asp-items="ViewBag.OrganizerId"></select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="TeamId" class="control-label"></label>
+                            <select asp-for="TeamId" class ="form-control" asp-items="ViewBag.TeamId"></select>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

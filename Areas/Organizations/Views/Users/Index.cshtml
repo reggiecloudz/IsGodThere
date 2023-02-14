@@ -1,0 +1,63 @@
+@model IEnumerable<ApplicationUser>
+@{
+    ViewData["Title"] = "Users";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 fs-3">Users</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 fs-3">
+            <a class="btn btn-primary" asp-action="Create">Create New</a>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-md-12">
+            <div class="card-table">
+                <div class="card-header">
+                    Data
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="example" class="table data-table" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Update</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach (ApplicationUser user in Model)
+                            {
+                                <tr>
+                                    <td>@user.Id</td>
+                                    <td>@user.FullName</td>
+                                    <td>@user.Email</td>
+                                    <td>
+                                        <a class="btn btn-sm btn-primary" asp-action="Update" asp-route-id="@user.Id">
+                                            Update
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <form asp-action="Delete" asp-route-id="@user.Id" method="post">
+                                            <button type="submit" class="btn btn-sm btn-danger">
+                                                Delete
+                                            </button>
+                                        </form>
+                                    </td>      
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,225 @@
+<div class="offcanvas offcanvas-start bg-dark text-white side-bar" data-bs-scroll="true" tabindex="-1" id="offcanvas"
+    aria-labelledby="offcanvas">
+    <div class="offcanvas-body p-0">
+        <nav class="navbar-dark">
+            <ul class="navbar-nav">
+                <li>
+                    <a asp-area="Organizations" asp-controller="Dashboard" asp-action="Index"
+                        class="nav-link px-3 active">
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseUsers"
+                        role="button" aria-expanded="false" aria-controls="collapseUsers">
+                        <span>Users</span>
+                        <span class="right-icon ms-auto">
+                            <i class="bi bi-chevron-down"></i>
+                        </span>
+                    </a>
+                    <div class="collapse" id="collapseUsers">
+                        <div>
+                            <ul class="navbar-nav ps-3">
+                                <li>
+                                    <a asp-area="Organizations" asp-controller="Users" asp-action="Index" class="nav-link px-3">
+                                        <span>Users</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseOrganization"
+                        role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <span>Organization</span>
+                        <span class="right-icon ms-auto">
+                            <i class="bi bi-chevron-down"></i>
+                        </span>
+                    </a>
+                    <div class="collapse" id="collapseOrganization">
+                        <div>
+                            <ul class="navbar-nav ps-3">
+                                <li>
+                                    <a asp-area="Organizations" asp-controller="Organizations" asp-action="Index" class="nav-link px-3">
+                                        <span>Organization</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-area="Organizations" asp-controller="Organizers" asp-action="Index" class="nav-link px-3">
+                                        <span>Organizers</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-area="Organizations" asp-controller="Members" asp-action="Index" class="nav-link px-3">
+                                        <span>Members</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-area="Organizations" asp-controller="Teams" asp-action="Index" class="nav-link px-3">
+                                        <span>Teams</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseCampaigns"
+                        role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <span>Campaigns</span>
+                        <span class="right-icon ms-auto">
+                            <i class="bi bi-chevron-down"></i>
+                        </span>
+                    </a>
+                    <div class="collapse" id="collapseCampaigns">
+                        <div>
+                            <ul class="navbar-nav ps-3">
+                                <li>
+                                    <a asp-area="Organizations" asp-controller="Causes" asp-action="Index" class="nav-link px-3">
+                                        <span>Causes</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-area="Organizations" asp-controller="Campaigns" asp-action="Index" class="nav-link px-3">
+                                        <span>Campaigns</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-area="Organizations" asp-controller="Donations" asp-action="Index" class="nav-link px-3">
+                                        <span>Donations</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseVolunteers"
+                        role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <span>Volunteers</span>
+                        <span class="right-icon ms-auto">
+                            <i class="bi bi-chevron-down"></i>
+                        </span>
+                    </a>
+                    <div class="collapse" id="collapseVolunteers">
+                        <div>
+                            <ul class="navbar-nav ps-3">
+                                <li>
+                                    <a asp-area="Organizations" asp-controller="Opportunities" asp-action="Index" class="nav-link px-3">
+                                        <span>Opportunities</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-area="Organizations" asp-controller="Applicants" asp-action="Index" class="nav-link px-3">
+                                        <span>Applicants</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-area="Organizations" asp-controller="Volunteers" asp-action="Index" class="nav-link px-3">
+                                        <span>Volunteers</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseMeetings"
+                        role="button" aria-expanded="false" aria-controls="collapseMeetings">
+                        <span>Meetings</span>
+                        <span class="right-icon ms-auto">
+                            <i class="bi bi-chevron-down"></i>
+                        </span>
+                    </a>
+                    <div class="collapse" id="collapseMeetings">
+                        <div>
+                            <ul class="navbar-nav ps-3">
+                                <li>
+                                    <a asp-area="Organizations" asp-controller="Meetings" asp-action="Index" class="nav-link px-3">
+                                        <span>Meetings</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseMessenging"
+                        role="button" aria-expanded="false" aria-controls="collapseMessenging">
+                        <span>Messenging</span>
+                        <span class="right-icon ms-auto">
+                            <i class="bi bi-chevron-down"></i>
+                        </span>
+                    </a>
+                    <div class="collapse" id="collapseMessenging">
+                        <div>
+                            <ul class="navbar-nav ps-3">
+                                <li>
+                                    <a asp-area="Organizations" asp-controller="Dashboard" asp-action="Index" class="nav-link px-3">
+                                        <span>Messages</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-area="Organizations" asp-controller="Dashboard" asp-action="Index" class="nav-link px-3">
+                                        <span>Contacts</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseBlog"
+                        role="button" aria-expanded="false" aria-controls="collapseBlog">
+                        <span>Blog</span>
+                        <span class="right-icon ms-auto">
+                            <i class="bi bi-chevron-down"></i>
+                        </span>
+                    </a>
+                    <div class="collapse" id="collapseBlog">
+                        <div>
+                            <ul class="navbar-nav ps-3">
+                                <li>
+                                    <a asp-area="Organizations" asp-controller="Categories" asp-action="Index" class="nav-link px-3">
+                                        <span>Categories</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-area="Organizations" asp-controller="Articles" asp-action="Index" class="nav-link px-3">
+                                        <span>Articles</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseDiscussions"
+                        role="button" aria-expanded="false" aria-controls="collapseDiscussions">
+                        <span>Discussions</span>
+                        <span class="right-icon ms-auto">
+                            <i class="bi bi-chevron-down"></i>
+                        </span>
+                    </a>
+                    <div class="collapse" id="collapseDiscussions">
+                        <div>
+                            <ul class="navbar-nav ps-3">
+                                <li>
+                                    <a asp-area="Organizations" asp-controller="Forums" asp-action="Index" class="nav-link px-3">
+                                        <span>Forums</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-area="Organizations" asp-controller="Topics" asp-action="Index" class="nav-link px-3">
+                                        <span>Topics</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+@model IEnumerable<IsGodThere.Domain.Comment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 fs-3">Comments</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 fs-3">
+            <a class="btn btn-primary" asp-action="Create">Create New</a>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-md-12">
+            <div class="card-table">
+                <div class="card-header">
+                    Data
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="example" class="table data-table" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Content)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Article)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Parent)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.User)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model) {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Content)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Article!.Title)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Parent!.Id)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.User!.FullName)
+                                        </td>
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="modal fade" id="modal-chat-form" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title product-title fs-4">
+                    <a href="#">New Room</a>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row g-4">
+                    <form asp-controller="Messenging" asp-action="CreateRoom">
+                        <div class="form-group mb-3">
+                            <input class="form-control" type="text" name="Name" />
+                        </div>
+                        <div class="form-group mb-3">
+                            <button type="submit" class="btn btn-primary">Create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

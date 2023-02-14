@@ -1,0 +1,67 @@
+@model IEnumerable<IsGodThere.Domain.TeamOrganizer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 fs-3">Team Organizers</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 fs-3">
+            <a class="btn btn-primary" asp-action="Create">Create New</a>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-md-12">
+            <div class="card-table">
+                <div class="card-header">
+                    Data
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="example" class="table data-table" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.IsLead)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Organizer)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Team)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                        @foreach (var item in Model) {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.IsLead)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Organizer!.Identity!.FullName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Team!.Name)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                                    </td>
+                                </tr>
+                        }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

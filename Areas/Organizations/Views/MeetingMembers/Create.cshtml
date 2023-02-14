@@ -1,0 +1,47 @@
+@model IsGodThere.Domain.MeetingMember
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 fs-3">Create</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 fs-3">
+            <a class="btn btn-primary" asp-action="Index">Back to List</a>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    Create
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="MemberId" class="control-label"></label>
+                            <select asp-for="MemberId" class ="form-control" asp-items="ViewBag.MemberId"></select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="MeetingId" class="control-label"></label>
+                            <select asp-for="MeetingId" class ="form-control" asp-items="ViewBag.MeetingId"></select>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
